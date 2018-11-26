@@ -1,0 +1,19 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "VBAP konverzió", "VBAP konverzió\VBAP konverzió.dtproj", "{841F05A0-D89D-41DF-AE34-FB4DCA3AF5A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{841F05A0-D89D-41DF-AE34-FB4DCA3AF5A3}.Development|Default.ActiveCfg = Development
+		{841F05A0-D89D-41DF-AE34-FB4DCA3AF5A3}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

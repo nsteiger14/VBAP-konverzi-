@@ -1,0 +1,3144 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/9/2017 10:04:55 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="XALMA"
+  DTS:CreatorName="HEREND\sn"
+  DTS:DelayValidation="True"
+  DTS:DTSID="{3705CD9A-6A58-46AB-B511-20975DA4EFE8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.68"
+  DTS:LocaleID="1038"
+  DTS:ObjectName="VBAP konverzió1"
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{80CBF2A5-BF55-4998-8A94-4475614D5759}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[dBase III]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0FC248C8-235A-4F2F-93A7-1E46561C00F3}"
+      DTS:ObjectName="dBase III">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=\\SAPPRD\BOLTIF;Provider=Microsoft.Jet.OLEDB.4.0;Extended Properties=DBase 5.0;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[dBase III 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D113D2EC-B4D1-4B09-9420-F1D9ACA4F4B9}"
+      DTS:ObjectName="dBase III 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=\\SAPPRD\BOLTIF;Provider=Microsoft.Jet.OLEDB.4.0;Extended Properties=DBase 5.0;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SAPPRD read]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3617C05F-E6B2-4F7F-A7C7-1291C9FD9C85}"
+      DTS:ObjectName="SAPPRD read">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SAPPRD;User ID=sap_read;Initial Catalog=PRD;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-VBAP konverzio-{3617C05F-E6B2-4F7F-A7C7-1291C9FD9C85}Microsoft OLE DB Provider for SQL Server;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbAG/sRJy50GA6CprU2wHbwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAhChRbpRvgPsZIe2/EhM1ZAAAAAASAAACgAAAAEAAAAIaQb8FPM2/B/fVgCg693WkYAAAA+TeVgb8KE4L47nAyX7xIX7LIsn0Bw3R7FAAAAFhRjLI/0P0ct4klwe1db5sYCFop</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SAPPRD read 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A87FDEC7-692F-4292-912D-CD1625F8B370}"
+      DTS:ObjectName="SAPPRD read 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SAPPRD;User ID=sap_read;Initial Catalog=PRD;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-VBAP konverzio-{A87FDEC7-692F-4292-912D-CD1625F8B370}Microsoft OLE DB Provider for SQL Server;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbAG/sRJy50GA6CprU2wHbwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA0e1KpBe326MX5blQteet9AAAAAASAAACgAAAAEAAAAOHlNjsjb+h9UAR5hAstujkYAAAATaKe1QWaulPDnfHMfJEBs4nA+SibUbpOFAAAACdGB4OZnExu4pFBscP42RbJUrEY</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EF4F3825-3F1F-4F82-96B8-EE3284C57632}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Create tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{ED6870E7-A46A-4809-9A2C-F2E85A657521}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 CTP2.1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0FC248C8-235A-4F2F-93A7-1E46561C00F3}"
+          SQLTask:SqlStatementSource="CREATE TABLE `MSSA` (&#xA;`MATNR` VarChar (18) , &#xA;`VBELN` VarChar (10) , &#xA;`POSNR` VarChar (6) ,&#xA;`SALAB` Decimal (5,0) ,&#xA;`BZIRK` VarChar (6) ,&#xA;`LGORT` VarChar (4) ,&#xA;`LABST` Decimal (5,0) ,&#xA;`KLABS` Decimal (5,0) ,&#xA;`DB` Decimal (5,0) &#xA;)&#xA;&#xA;go&#xA;&#xA;CREATE TABLE `MSEG` (&#xA;`MBLNR` VarChar (10) , &#xA;`BLDAT` VarChar (8) , &#xA;`KDAUF` VarChar (10) , &#xA;`KDPOS` VarChar (6) , &#xA;`LINE_ID`  VarChar (6), &#xA;`MATNR` VarChar (18) , &#xA;`LGORT` VarChar (4) , &#xA;`MENGE` Decimal (5,0)  ,&#xA;`UMLGO` VarChar (4) , &#xA;`USNAM` VarChar (20) &#xA;)&#xA;&#xA;go&#xA;&#xA;CREATE TABLE `MARD` (&#xA;`MATNR` VarChar (18) , &#xA;`LGORT` VarChar (4) , &#xA;`LABST` Decimal (5,0)  ,&#xA;`KLABS` Decimal (5,0)  ,&#xA;`DB` Decimal (5,0)  &#xA;)&#xA;&#xA;go&#xA;&#xA;CREATE TABLE `VBAP` (&#xA;`VBELN` VarChar (10) , &#xA;`POSNR` VarChar (6) , &#xA;`MATNR` VarChar (18) , &#xA;`MATKL` VarChar (9) , &#xA;`PRODH` VarChar (36) , &#xA;`KWMENG` Decimal (15,3) , &#xA;`DB` Decimal (5,0)  , &#xA;`KZWI5` Decimal (8,0),&#xA;`KUNNR` VarChar (10) &#xA;)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete tables"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:DTSID="{D2FD4320-2ACE-4DB0-A855-1737E8E5F63D}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete tables"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_c7da044badc845e18da647bca58f314a"
+          VSTAMajorVersion="3"
+          VSTAMinorVersion="0"
+          Language="CSharp">
+          <ProjectItem
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_c7da044badc845e18da647bca58f314a")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_c7da044badc845e18da647bca58f314a")]
+[assembly: AssemblyCopyright("Copyright @  2017")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Resources.resx"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptMain.cs"
+            Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
+/* The Script Task allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services control flow. 
+ * 
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script task. */
+#endregion
+
+
+#region Namespaces
+using Microsoft.SqlServer.Dts.Runtime;
+using System.Windows.Forms;
+using System.IO;
+using System.Data.OleDb;
+using System.Text;
+#endregion
+
+namespace ST_c7da044badc845e18da647bca58f314a
+{
+    /// <summary>
+    /// ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+    /// or parent of this class.
+    /// </summary>
+	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
+	public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+	{
+        #region Help:  Using Integration Services variables and parameters in a script
+        /* To use a variable in this script, first ensure that the variable has been added to 
+         * either the list contained in the ReadOnlyVariables property or the list contained in 
+         * the ReadWriteVariables property of this script task, according to whether or not your
+         * code needs to write to the variable.  To add the variable, save this script, close this instance of
+         * Visual Studio, and update the ReadOnlyVariables and 
+         * ReadWriteVariables properties in the Script Transformation Editor window.
+         * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+         * 
+         * Example of reading from a variable:
+         *  DateTime startTime = (DateTime) Dts.Variables["System::StartTime"].Value;
+         * 
+         * Example of writing to a variable:
+         *  Dts.Variables["User::myStringVariable"].Value = "new value";
+         * 
+         * Example of reading from a package parameter:
+         *  int batchId = (int) Dts.Variables["$Package::batchId"].Value;
+         *  
+         * Example of reading from a project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].Value;
+         * 
+         * Example of reading from a sensitive project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].GetSensitiveValue();
+         * */
+
+        #endregion
+
+        #region Help:  Firing Integration Services events from a script
+        /* This script task can fire events for logging purposes.
+         * 
+         * Example of firing an error event:
+         *  Dts.Events.FireError(18, "Process Values", "Bad value", "", 0);
+         * 
+         * Example of firing an information event:
+         *  Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, ref fireAgain)
+         * 
+         * Example of firing a warning event:
+         *  Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0);
+         * */
+        #endregion
+
+        #region Help:  Using Integration Services connection managers in a script
+        /* Some types of connection managers can be used in this script task.  See the topic 
+         * "Working with Connection Managers Programatically" for details.
+         * 
+         * Example of using an ADO.Net connection manager:
+         *  object rawConnection = Dts.Connections["Sales DB"].AcquireConnection(Dts.Transaction);
+         *  SqlConnection myADONETConnection = (SqlConnection)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Sales DB"].ReleaseConnection(rawConnection);
+         *
+         * Example of using a File connection manager
+         *  object rawConnection = Dts.Connections["Prices.zip"].AcquireConnection(Dts.Transaction);
+         *  string filePath = (string)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Prices.zip"].ReleaseConnection(rawConnection);
+         * */
+        #endregion
+
+
+        /// <summary>
+        /// This method is called when this script task executes in the control flow.
+        /// Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+        /// To open Help, press F1.
+        /// </summary>
+        public void Main()
+        {
+            ConnectionManager cm;
+            cm = Dts.Connections["dBase III"];
+
+            string[] str = cm.ConnectionString.ToString().Split(System.Convert.ToChar(";"));
+            StringBuilder cnstr = new StringBuilder();
+            string alap1;
+            alap1= (str[0].Replace("Data Source=", ""));
+            //MessageBox.Show(alap1);
+
+            //alap1 = myADONETConnection.DataSource;
+            string alap2;
+            alap2 = alap1 + "\\mard.dbf";
+            if (File.Exists(alap2)) { File.Delete(alap2); }
+            alap2 = alap1 + "\\mseg.dbf";
+            if (File.Exists(alap2)) { File.Delete(alap2); }
+            alap2 = alap1 + "\\mssa.dbf";
+            if (File.Exists(alap2)) { File.Delete(alap2); }
+            alap2 = alap1 + "\\vbap.dbf";
+            if (File.Exists(alap2)) { File.Delete(alap2); }
+            Dts.TaskResult = (int)ScriptResults.Success;
+        }
+
+        #region ScriptResults declaration
+        /// <summary>
+        /// This enum provides a convenient shorthand within the scope of this class for setting the
+        /// result of the script.
+        /// 
+        /// This code was generated automatically.
+        /// </summary>
+        enum ScriptResults
+        {
+            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
+            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+        };
+        #endregion
+
+	}
+}]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>ST_c7da044badc845e18da647bca58f314a</msb:CodeName>
+		<msb:DisplayName>ST_c7da044badc845e18da647bca58f314a</msb:DisplayName>
+		<msb:ProjectId>{98A70F63-09B4-43E9-B0E0-7E3827097366}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="ST_c7da044badc845e18da647bca58f314a.csproj"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="ScriptMain.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_c7da044badc845e18da647bca58f314a.Properties.Settings.get_Default():ST_c7da044badc845e18da647bca58f314a.Properties.Sett" +
+    "ings")]
+
+namespace ST_c7da044badc845e18da647bca58f314a.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <ProjectItem
+            Name="ST_c7da044badc845e18da647bca58f314a.csproj"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3bd42b1d-cb7d-459d-8a61-ffe82dbcad02}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ST_c7da044badc845e18da647bca58f314a</RootNamespace>
+    <AssemblyName>ST_c7da044badc845e18da647bca58f314a</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=12.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=12.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptTask" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="ScriptTask" GeneratedNamespace="$safeprojectname" IconIndex=""></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST120</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Resources.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_c7da044badc845e18da647bca58f314a.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_c7da044badc845e18da647bca58f314a.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_c7da044badc845e18da647bca58f314a.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace ST_c7da044badc845e18da647bca58f314a.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_c7da044badc845e18da647bca58f314a.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <BinaryItem
+            Name="ST_c7da044badc845e18da647bca58f314a.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAL98+VoAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAAVi8A
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAAQvAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAXA8AAAAgAAAAEAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAASAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAGAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAA4
+LwAAAAAAAEgAAAACAAUAhCEAAMgMAAABAAAAAAAAAEwuAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABMwBQDCAAAAAQAAEQIoEAAACm8RAAAKcgEAAHBvEgAACm8T
+AAAKbxQAAAoXjRsAAAElFnIVAABwKBUAAAqdbxYAAApzFwAACiYWmnIZAABwcjMAAHBvGAAACiVy
+NQAAcCgZAAAKCgYoGgAACiwGBigbAAAKJXJJAABwKBkAAAoKBigaAAAKLAYGKBsAAAolcl0AAHAo
+GQAACgoGKBoAAAosBgYoGwAACnJxAABwKBkAAAoKBigaAAAKLAYGKBsAAAoCKBAAAAoWbxwAAAoq
+HgIoHQAACioeAigeAAAKKq5+AQAABC0ecoUAAHDQAwAAAigfAAAKbyAAAApzIQAACoABAAAEfgEA
+AAQqGn4CAAAEKh4CgAIAAAQqGn4DAAAEKh4CKCIAAAoqLnMIAAAGgAMAAAQqQlNKQgEAAQAAAAAA
+DAAAAHY0LjAuMzAzMTkAAAAABQBsAAAABAQAACN+AABwBAAAzAUAACNTdHJpbmdzAAAAADwKAAD4
+AAAAI1VTADQLAAAQAAAAI0dVSUQAAABECwAAhAEAACNCbG9iAAAAAAAAAAIAAAFXHaIBCQMAAAD6
+ATMAFgAAAQAAACIAAAAFAAAABgAAAAkAAAABAAAAIgAAAAIAAAAQAAAAAQAAAAIAAAADAAAABAAA
+AAEAAAAEAAAAAQAAAAEAAAAAAJUDAQAAAAAABgA6AowEBgDJAowEBgCGAXkEDwAABQAABgCzARME
+BgAdAhMEBgD+ARMEBgCwAhMEBgBaAhMEBgBzAhMEBgDKARMEBgDlAe0CCgCOAkQDCgD+AEQDBgDN
+A8YDBgBpAXkEBgCDBcYDBgBKBKwEBgAlBP4DDgAyAX8DDgCaAX8DDgAaAekDBgBOAYwECgBtA0QD
+EgBLBakAEgBaBKkABgAzBMYDBgCrBcYDBgAeA8YDBgA4BLMFBgCkAAoABgDJAMYDBgCAAMYDBgDD
+BRMEAAAAAAEAAAAAAAEAAQABABAA3gM7ADkAAQABAAAAEACzBA8FRQABAAMAAAEQAD4FDwVZAAMA
+BwADAQAAZwUAAD0ABAAKABEA0gOIABEA7gCMABEAcACQAAYGMwCUAFaAVwWXAFaAzgCXAFAgAAAA
+AIYA5AMGAAEAHiEAAAAAhhhsBAYAAQAmIQAAAACDGGwEBgABAC4hAAAAAJMIRgSbAAEAWiEAAAAA
+kwjWAKAAAQBhIQAAAACTCOIApQABAGkhAAAAAJYIkAWrAAIAcCEAAAAAhhhsBAYAAgB4IQAAAACR
+GHIEsAACAAAAAQDnAgkAbAQBABEAbAQGABkAbAQKACkAbAQQADEAbAQQADkAbAQQAEEAbAQQAEkA
+bAQQAFEAbAQQAFkAbAQQAGEAbAQQAGkAbAQGAIEAbAQGAKkAbAQVALkAbAQGAHEAXwUfAMEARwUk
+AMkAvQMpANEABwMvAIkAHAMvAOEAMQQzAOkAigU4APEAbAQGAOkAaAA/AOkAfAVFAPkAdQVLAPkA
+RwFQAMEAnAUBAHEAbAQGAIkAbAQGAAEBkgBVAAEBvwVeAJEAbARkALEAbAQGAAgAFAB+AAgAGACD
+ACkAcwDrAC4ACwDDAC4AEwDMAC4AGwDrAC4AIwD0AC4AKwAdAS4AMwAdAS4AOwAdAS4AQwD0AC4A
+SwAjAS4AUwAdAS4AWwA6AUMAYwCDAEkAcwDrAGEAewCDAGMAawCDABsAAwABAAQAAwAAAEoEtAAA
+APYAuQAAAJQFvgACAAQAAwACAAUABQABAAYABQACAAcABwAEgAAAAQAAADQar2MAAAAAAAA7AAAA
+BAAAAAAAAAAAAAAAbABfAAAAAAAMAAAAAAAAAAAAAAB1ACUDAAAAAAQAAAAAAAAAAAAAAGwAxgMA
+AAAADAAAAAAAAAAAAAAAdQAUAAAAAAAAAAAAAQAAAL0EAAAFAAIAAAAAPE1vZHVsZT4AU3lzdGVt
+LklPAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuTWFuYWdlZERUUwB2YWx1ZV9fAFNUX2M3ZGEwNDRiYWRj
+ODQ1ZTE4ZGE2NDdiY2E1OGYzMTRhAG1zY29ybGliAFJlcGxhY2UAZGVmYXVsdEluc3RhbmNlAFJ1
+bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAEZpbGUATWljcm9zb2Z0LlNxbFNlcnZl
+ci5EdHMuUnVudGltZQBUeXBlAEZhaWx1cmUAZ2V0X0N1bHR1cmUAc2V0X0N1bHR1cmUAcmVzb3Vy
+Y2VDdWx0dXJlAFZTVEFSVFNjcmlwdE9iamVjdE1vZGVsQmFzZQBBcHBsaWNhdGlvblNldHRpbmdz
+QmFzZQBFZGl0b3JCcm93c2FibGVTdGF0ZQBEZWxldGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1
+dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRv
+ckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVt
+YXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRp
+b25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4
+YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdo
+dEF0dHJpYnV0ZQBTU0lTU2NyaXB0VGFza0VudHJ5UG9pbnRBdHRyaWJ1dGUAQXNzZW1ibHlDb21w
+YW55QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmlsaXR5QXR0cmlidXRlAHZhbHVlAFN5c3RlbS5S
+dW50aW1lLlZlcnNpb25pbmcAZ2V0X0Nvbm5lY3Rpb25TdHJpbmcAVG9TdHJpbmcATWljcm9zb2Z0
+LlNxbFNlcnZlci5TY3JpcHRUYXNrAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlRhc2tzLlNjcmlw
+dFRhc2sAU2NyaXB0T2JqZWN0TW9kZWwAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNUX2M3ZGEwNDRi
+YWRjODQ1ZTE4ZGE2NDdiY2E1OGYzMTRhLmRsbABnZXRfSXRlbQBTeXN0ZW0ARW51bQByZXNvdXJj
+ZU1hbgBTY3JpcHRNYWluAFN5c3RlbS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9u
+AFN5c3RlbS5SZWZsZWN0aW9uAEN1bHR1cmVJbmZvAFRvQ2hhcgBTdHJpbmdCdWlsZGVyAGdldF9S
+ZXNvdXJjZU1hbmFnZXIAQ29ubmVjdGlvbk1hbmFnZXIALmN0b3IALmNjdG9yAFN5c3RlbS5EaWFn
+bm9zdGljcwBTeXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMA
+U1RfYzdkYTA0NGJhZGM4NDVlMThkYTY0N2JjYTU4ZjMxNGEuUHJvcGVydGllcy5SZXNvdXJjZXMu
+cmVzb3VyY2VzAERlYnVnZ2luZ01vZGVzAFNUX2M3ZGEwNDRiYWRjODQ1ZTE4ZGE2NDdiY2E1OGYz
+MTRhLlByb3BlcnRpZXMAU2V0dGluZ3MAZ2V0X0Nvbm5lY3Rpb25zAFN1Y2Nlc3MAZ2V0X0R0cwBT
+Y3JpcHRSZXN1bHRzAEV4aXN0cwBDb25jYXQAT2JqZWN0AFNwbGl0AGdldF9EZWZhdWx0AHNldF9U
+YXNrUmVzdWx0AENvbnZlcnQAU3lzdGVtLlRleHQAZ2V0X0Fzc2VtYmx5AAATZABCAGEAcwBlACAA
+SQBJAEkAAAM7AAAZRABhAHQAYQAgAFMAbwB1AHIAYwBlAD0AAAEAE1wAbQBhAHIAZAAuAGQAYgBm
+AAATXABtAHMAZQBnAC4AZABiAGYAABNcAG0AcwBzAGEALgBkAGIAZgAAE1wAdgBiAGEAcAAuAGQA
+YgBmAABxUwBUAF8AYwA3AGQAYQAwADQANABiAGEAZABjADgANAA1AGUAMQA4AGQAYQA2ADQANwBi
+AGMAYQA1ADgAZgAzADEANABhAC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMA
+ZQBzAAAAazZOnUenV0GBgfAiGyjbjQAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERUQMHAQ4EIAAS
+YQQgABJlBSABEmkcAyAADgQAAQMOBiABHQ4dAwUgAg4ODgUAAg4ODgQAAQIOBAABAQ4IAAESgIER
+gIUFIAASgIkHIAIBDhKAiQi3elxWGTTgiQiJhF3NgIDMkQQAAAAABAEAAAADBhJJAwYSTQMGEhAC
+BggDBhEUBAAAEkkEAAASTQUAAQESTQQAABIQAwAAAQQIABJJBAgAEk0ECAASEAgBAAgAAAAAAB4B
+AAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU1RfYzdkYTA0NGJhZGM4
+NDVlMThkYTY0N2JjYTU4ZjMxNGEAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAxNwAARwEAGi5O
+RVRGcmFtZXdvcmssVmVyc2lvbj12NC4wAQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRAuTkVUIEZy
+YW1ld29yayA0AAC0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFk
+ZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5
+VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNl
+dAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAALC8AAAAAAAAAAAAARi8AAAAgAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAADgvAAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAAEAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAA
+AABIAAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBP
+AAAAAAC9BO/+AAABAAAAAQCvYzQaAAABAK9jNBo/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
+RAAAAAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBv
+AG4AAAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAA
+MAAwADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABh
+AG4AeQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4A
+AAAAAFMAVABfAGMANwBkAGEAMAA0ADQAYgBhAGQAYwA4ADQANQBlADEAOABkAGEANgA0ADcAYgBj
+AGEANQA4AGYAMwAxADQAYQAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAA
+LgA2ADcAMAA4AC4AMgA1ADUAMQA5AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
+AFMAVABfAGMANwBkAGEAMAA0ADQAYgBhAGQAYwA4ADQANQBlADEAOABkAGEANgA0ADcAYgBjAGEA
+NQA4AGYAMwAxADQAYQAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0
+AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMQA3AAAAKgABAAEATABlAGcAYQBsAFQA
+cgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBu
+AGEAbQBlAAAAUwBUAF8AYwA3AGQAYQAwADQANABiAGEAZABjADgANAA1AGUAMQA4AGQAYQA2ADQA
+NwBiAGMAYQA1ADgAZgAzADEANABhAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBt
+AGUAAAAAAFMAVABfAGMANwBkAGEAMAA0ADQAYgBhAGQAYwA4ADQANQBlADEAOABkAGEANgA0ADcA
+YgBjAGEANQA4AGYAMwAxADQAYQAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAA
+ADEALgAwAC4ANgA3ADAAOAAuADIANQA1ADEAOQAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
+VgBlAHIAcwBpAG8AbgAAADEALgAwAC4ANgA3ADAAOAAuADIANQA1ADEAOQAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAwAAABYPwAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
+        </ScriptProject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\MARD copy"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Transform Data Task: undefined"
+      DTS:DTSID="{6807327F-1FD4-448D-8083-91537D391BDD}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="MARD copy"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          version="1">
+          <components>
+            <component
+              refId="Package\MARD copy\MARD dBASE"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="MARD dBASE"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">MARD</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\MARD copy\MARD dBASE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[dBase III]"
+                  connectionManagerRefId="Package.ConnectionManagers[dBase III]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\MARD copy\MARD dBASE.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\MARD copy\MARD dBASE.Inputs[OLE DB Destination Input].Columns[MATNR]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="MATNR"
+                      externalMetadataColumnId="Package\MARD copy\MARD dBASE.Inputs[OLE DB Destination Input].ExternalColumns[MATNR]"
+                      lineageId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].Columns[MATNR]" />
+                    <inputColumn
+                      refId="Package\MARD copy\MARD dBASE.Inputs[OLE DB Destination Input].Columns[LGORT]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="LGORT"
+                      externalMetadataColumnId="Package\MARD copy\MARD dBASE.Inputs[OLE DB Destination Input].ExternalColumns[LGORT]"
+                      lineageId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].Columns[LGORT]" />
+                    <inputColumn
+                      refId="Package\MARD copy\MARD dBASE.Inputs[OLE DB Destination Input].Columns[LABST]"
+                      cachedDataType="numeric"
+                      cachedName="LABST"
+                      cachedPrecision="13"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\MARD copy\MARD dBASE.Inputs[OLE DB Destination Input].ExternalColumns[LABST]"
+                      lineageId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].Columns[LABST]" />
+                    <inputColumn
+                      refId="Package\MARD copy\MARD dBASE.Inputs[OLE DB Destination Input].Columns[KLABS]"
+                      cachedDataType="numeric"
+                      cachedName="KLABS"
+                      cachedPrecision="13"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\MARD copy\MARD dBASE.Inputs[OLE DB Destination Input].ExternalColumns[KLABS]"
+                      lineageId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].Columns[KLABS]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\MARD copy\MARD dBASE.Inputs[OLE DB Destination Input].ExternalColumns[MATNR]"
+                      dataType="wstr"
+                      length="18"
+                      name="MATNR" />
+                    <externalMetadataColumn
+                      refId="Package\MARD copy\MARD dBASE.Inputs[OLE DB Destination Input].ExternalColumns[LGORT]"
+                      dataType="wstr"
+                      length="4"
+                      name="LGORT" />
+                    <externalMetadataColumn
+                      refId="Package\MARD copy\MARD dBASE.Inputs[OLE DB Destination Input].ExternalColumns[LABST]"
+                      dataType="r8"
+                      name="LABST" />
+                    <externalMetadataColumn
+                      refId="Package\MARD copy\MARD dBASE.Inputs[OLE DB Destination Input].ExternalColumns[KLABS]"
+                      dataType="r8"
+                      name="KLABS" />
+                    <externalMetadataColumn
+                      refId="Package\MARD copy\MARD dBASE.Inputs[OLE DB Destination Input].ExternalColumns[DB]"
+                      dataType="r8"
+                      name="DB" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\MARD copy\MARD dBASE.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\MARD copy\MARD dBASE.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MARD copy\MARD dBASE.Outputs[OLE DB Destination Error Output].Columns[MATNR]"
+                      dataType="wstr"
+                      length="18"
+                      lineageId="Package\MARD copy\MARD dBASE.Outputs[OLE DB Destination Error Output].Columns[MATNR]"
+                      name="MATNR" />
+                    <outputColumn
+                      refId="Package\MARD copy\MARD dBASE.Outputs[OLE DB Destination Error Output].Columns[LGORT]"
+                      dataType="wstr"
+                      length="4"
+                      lineageId="Package\MARD copy\MARD dBASE.Outputs[OLE DB Destination Error Output].Columns[LGORT]"
+                      name="LGORT" />
+                    <outputColumn
+                      refId="Package\MARD copy\MARD dBASE.Outputs[OLE DB Destination Error Output].Columns[LABST]"
+                      dataType="r8"
+                      lineageId="Package\MARD copy\MARD dBASE.Outputs[OLE DB Destination Error Output].Columns[LABST]"
+                      name="LABST" />
+                    <outputColumn
+                      refId="Package\MARD copy\MARD dBASE.Outputs[OLE DB Destination Error Output].Columns[KLABS]"
+                      dataType="r8"
+                      lineageId="Package\MARD copy\MARD dBASE.Outputs[OLE DB Destination Error Output].Columns[KLABS]"
+                      name="KLABS" />
+                    <outputColumn
+                      refId="Package\MARD copy\MARD dBASE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\MARD copy\MARD dBASE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\MARD copy\MARD dBASE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\MARD copy\MARD dBASE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\MARD copy\MARD SQL"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="MARD SQL"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT     MATNR, WERKS, LGORT, LABST, KLABS
+FROM         MARD
+WHERE     (WERKS = 'HPM') AND (LABST+ KLABS&gt; 0) AND 
+( LGORT Like 'UL%' or LGORT Like 'HP%')
+
+</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\MARD copy\MARD SQL.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SAPPRD read]"
+                  connectionManagerRefId="Package.ConnectionManagers[SAPPRD read]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].Columns[MATNR]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].ExternalColumns[MATNR]"
+                      length="18"
+                      lineageId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].Columns[MATNR]"
+                      name="MATNR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].Columns[LGORT]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].ExternalColumns[LGORT]"
+                      length="4"
+                      lineageId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].Columns[LGORT]"
+                      name="LGORT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].Columns[LABST]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].ExternalColumns[LABST]"
+                      lineageId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].Columns[LABST]"
+                      name="LABST"
+                      precision="13"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].Columns[KLABS]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].ExternalColumns[KLABS]"
+                      lineageId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].Columns[KLABS]"
+                      name="KLABS"
+                      precision="13"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].ExternalColumns[MATNR]"
+                      dataType="wstr"
+                      length="18"
+                      name="MATNR" />
+                    <externalMetadataColumn
+                      refId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].ExternalColumns[WERKS]"
+                      dataType="wstr"
+                      length="4"
+                      name="WERKS" />
+                    <externalMetadataColumn
+                      refId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].ExternalColumns[LGORT]"
+                      dataType="wstr"
+                      length="4"
+                      name="LGORT" />
+                    <externalMetadataColumn
+                      refId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].ExternalColumns[LABST]"
+                      dataType="numeric"
+                      name="LABST"
+                      precision="13"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output].ExternalColumns[KLABS]"
+                      dataType="numeric"
+                      name="KLABS"
+                      precision="13"
+                      scale="3" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Error Output].Columns[MATNR]"
+                      dataType="wstr"
+                      length="18"
+                      lineageId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Error Output].Columns[MATNR]"
+                      name="MATNR" />
+                    <outputColumn
+                      refId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Error Output].Columns[LGORT]"
+                      dataType="wstr"
+                      length="4"
+                      lineageId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Error Output].Columns[LGORT]"
+                      name="LGORT" />
+                    <outputColumn
+                      refId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Error Output].Columns[LABST]"
+                      dataType="numeric"
+                      lineageId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Error Output].Columns[LABST]"
+                      name="LABST"
+                      precision="13"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Error Output].Columns[KLABS]"
+                      dataType="numeric"
+                      lineageId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Error Output].Columns[KLABS]"
+                      name="KLABS"
+                      precision="13"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\MARD copy.Paths[OLE DB Source Output]"
+              endId="Package\MARD copy\MARD dBASE.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\MARD copy\MARD SQL.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\MSEG copy"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Transform Data Task: undefined"
+      DTS:DTSID="{DBA94744-52DB-4811-98E9-1C90993058E7}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="MSEG copy"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          version="1">
+          <components>
+            <component
+              refId="Package\MSEG copy\MSEG dBASE"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="MSEG dBASE"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">MSEG</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\MSEG copy\MSEG dBASE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[dBase III]"
+                  connectionManagerRefId="Package.ConnectionManagers[dBase III]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].Columns[MBLNR]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="MBLNR"
+                      externalMetadataColumnId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].ExternalColumns[MBLNR]"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[MBLNR]" />
+                    <inputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].Columns[BLDAT]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="BLDAT"
+                      externalMetadataColumnId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].ExternalColumns[BLDAT]"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[BLDAT]" />
+                    <inputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].Columns[KDAUF]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="KDAUF"
+                      externalMetadataColumnId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].ExternalColumns[KDAUF]"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[KDAUF]" />
+                    <inputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].Columns[KDPOS]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="KDPOS"
+                      externalMetadataColumnId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].ExternalColumns[KDPOS]"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[KDPOS]" />
+                    <inputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].Columns[LINE_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="LINE_ID"
+                      externalMetadataColumnId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].ExternalColumns[LINE_ID]"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[LINE_ID]" />
+                    <inputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].Columns[MATNR]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="MATNR"
+                      externalMetadataColumnId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].ExternalColumns[MATNR]"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[MATNR]" />
+                    <inputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].Columns[LGORT]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="LGORT"
+                      externalMetadataColumnId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].ExternalColumns[LGORT]"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[LGORT]" />
+                    <inputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].Columns[MENGE]"
+                      cachedDataType="numeric"
+                      cachedName="MENGE"
+                      cachedPrecision="13"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].ExternalColumns[MENGE]"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[MENGE]" />
+                    <inputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].Columns[UMLGO]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="UMLGO"
+                      externalMetadataColumnId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].ExternalColumns[UMLGO]"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[UMLGO]" />
+                    <inputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].Columns[USNAM]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="USNAM"
+                      externalMetadataColumnId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].ExternalColumns[USNAM]"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[USNAM]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].ExternalColumns[MBLNR]"
+                      dataType="wstr"
+                      length="10"
+                      name="MBLNR" />
+                    <externalMetadataColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].ExternalColumns[BLDAT]"
+                      dataType="wstr"
+                      length="8"
+                      name="BLDAT" />
+                    <externalMetadataColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].ExternalColumns[KDAUF]"
+                      dataType="wstr"
+                      length="10"
+                      name="KDAUF" />
+                    <externalMetadataColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].ExternalColumns[KDPOS]"
+                      dataType="wstr"
+                      length="6"
+                      name="KDPOS" />
+                    <externalMetadataColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].ExternalColumns[LINE_ID]"
+                      dataType="wstr"
+                      length="6"
+                      name="LINE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].ExternalColumns[MATNR]"
+                      dataType="wstr"
+                      length="18"
+                      name="MATNR" />
+                    <externalMetadataColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].ExternalColumns[LGORT]"
+                      dataType="wstr"
+                      length="4"
+                      name="LGORT" />
+                    <externalMetadataColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].ExternalColumns[MENGE]"
+                      dataType="r8"
+                      name="MENGE" />
+                    <externalMetadataColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].ExternalColumns[UMLGO]"
+                      dataType="wstr"
+                      length="4"
+                      name="UMLGO" />
+                    <externalMetadataColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input].ExternalColumns[USNAM]"
+                      dataType="wstr"
+                      length="20"
+                      name="USNAM" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[MBLNR]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[MBLNR]"
+                      name="MBLNR" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[BLDAT]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[BLDAT]"
+                      name="BLDAT" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[KDAUF]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[KDAUF]"
+                      name="KDAUF" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[KDPOS]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[KDPOS]"
+                      name="KDPOS" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[LINE_ID]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[LINE_ID]"
+                      name="LINE_ID" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[MATNR]"
+                      dataType="wstr"
+                      length="18"
+                      lineageId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[MATNR]"
+                      name="MATNR" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[LGORT]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[LGORT]"
+                      name="LGORT" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[MENGE]"
+                      dataType="r8"
+                      lineageId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[MENGE]"
+                      name="MENGE" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[UMLGO]"
+                      dataType="wstr"
+                      length="4"
+                      lineageId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[UMLGO]"
+                      name="UMLGO" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[USNAM]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[USNAM]"
+                      name="USNAM" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\MSEG copy\MSEG dBASE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\MSEG copy\MSEG SQL"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="MSEG SQL"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT MSEG.MBLNR, MKPF.BLDAT, MSEG.KDAUF, MSEG.KDPOS, MSEG.LINE_ID, MSEG.MATNR, MSEG.LGORT, MSEG.MENGE, MSEG.UMLGO, MKPF.USNAM
+FROM MSEG
+JOIN MKPF ON MSEG.MANDT = MKPF.MANDT AND MSEG.MBLNR = MKPF.MBLNR AND MSEG.MJAHR = MKPF.MJAHR and MKPF.USNAM&lt;&gt;'INTFRFC'
+WHERE MSEG.MANDT='400' and MSEG.BWART='311' and (MSEG.MJAHR &gt; 2008) AND (MSEG.LGORT Like 'UL%') and MSEG.XAUTO&lt;&gt;'X'
+order by MKPF.BLDAT</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\MSEG copy\MSEG SQL.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SAPPRD read]"
+                  connectionManagerRefId="Package.ConnectionManagers[SAPPRD read]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[MBLNR]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].ExternalColumns[MBLNR]"
+                      length="10"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[MBLNR]"
+                      name="MBLNR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[BLDAT]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].ExternalColumns[BLDAT]"
+                      length="8"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[BLDAT]"
+                      name="BLDAT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[KDAUF]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].ExternalColumns[KDAUF]"
+                      length="10"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[KDAUF]"
+                      name="KDAUF"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[KDPOS]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].ExternalColumns[KDPOS]"
+                      length="6"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[KDPOS]"
+                      name="KDPOS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[LINE_ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].ExternalColumns[LINE_ID]"
+                      length="6"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[LINE_ID]"
+                      name="LINE_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[MATNR]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].ExternalColumns[MATNR]"
+                      length="18"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[MATNR]"
+                      name="MATNR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[LGORT]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].ExternalColumns[LGORT]"
+                      length="4"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[LGORT]"
+                      name="LGORT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[MENGE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].ExternalColumns[MENGE]"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[MENGE]"
+                      name="MENGE"
+                      precision="13"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[UMLGO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].ExternalColumns[UMLGO]"
+                      length="4"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[UMLGO]"
+                      name="UMLGO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[USNAM]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].ExternalColumns[USNAM]"
+                      length="12"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].Columns[USNAM]"
+                      name="USNAM"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].ExternalColumns[MBLNR]"
+                      dataType="wstr"
+                      length="10"
+                      name="MBLNR" />
+                    <externalMetadataColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].ExternalColumns[BLDAT]"
+                      dataType="wstr"
+                      length="8"
+                      name="BLDAT" />
+                    <externalMetadataColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].ExternalColumns[KDAUF]"
+                      dataType="wstr"
+                      length="10"
+                      name="KDAUF" />
+                    <externalMetadataColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].ExternalColumns[KDPOS]"
+                      dataType="wstr"
+                      length="6"
+                      name="KDPOS" />
+                    <externalMetadataColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].ExternalColumns[LINE_ID]"
+                      dataType="wstr"
+                      length="6"
+                      name="LINE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].ExternalColumns[MATNR]"
+                      dataType="wstr"
+                      length="18"
+                      name="MATNR" />
+                    <externalMetadataColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].ExternalColumns[LGORT]"
+                      dataType="wstr"
+                      length="4"
+                      name="LGORT" />
+                    <externalMetadataColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].ExternalColumns[MENGE]"
+                      dataType="numeric"
+                      name="MENGE"
+                      precision="13"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].ExternalColumns[UMLGO]"
+                      dataType="wstr"
+                      length="4"
+                      name="UMLGO" />
+                    <externalMetadataColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output].ExternalColumns[USNAM]"
+                      dataType="wstr"
+                      length="12"
+                      name="USNAM" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[MBLNR]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[MBLNR]"
+                      name="MBLNR" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[BLDAT]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[BLDAT]"
+                      name="BLDAT" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[KDAUF]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[KDAUF]"
+                      name="KDAUF" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[KDPOS]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[KDPOS]"
+                      name="KDPOS" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[LINE_ID]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[LINE_ID]"
+                      name="LINE_ID" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[MATNR]"
+                      dataType="wstr"
+                      length="18"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[MATNR]"
+                      name="MATNR" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[LGORT]"
+                      dataType="wstr"
+                      length="4"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[LGORT]"
+                      name="LGORT" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[MENGE]"
+                      dataType="numeric"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[MENGE]"
+                      name="MENGE"
+                      precision="13"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[UMLGO]"
+                      dataType="wstr"
+                      length="4"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[UMLGO]"
+                      name="UMLGO" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[USNAM]"
+                      dataType="wstr"
+                      length="12"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[USNAM]"
+                      name="USNAM" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\MSEG copy.Paths[OLE DB Source Output]"
+              endId="Package\MSEG copy\MSEG dBASE.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\MSEG copy\MSEG SQL.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\MSSA copy"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Transform Data Task: undefined"
+      DTS:DTSID="{028DDF80-129B-4C0B-A6BC-72C894D045BF}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="MSSA copy"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          version="1">
+          <components>
+            <component
+              refId="Package\MSSA copy\MSSA dBASE"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="MSSA dBASE"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">MSSA</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\MSSA copy\MSSA dBASE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[dBase III]"
+                  connectionManagerRefId="Package.ConnectionManagers[dBase III]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input].Columns[MATNR]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="MATNR"
+                      externalMetadataColumnId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input].ExternalColumns[MATNR]"
+                      lineageId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].Columns[MATNR]" />
+                    <inputColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input].Columns[VBELN]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="VBELN"
+                      externalMetadataColumnId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input].ExternalColumns[VBELN]"
+                      lineageId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].Columns[VBELN]" />
+                    <inputColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input].Columns[POSNR]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="POSNR"
+                      externalMetadataColumnId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input].ExternalColumns[POSNR]"
+                      lineageId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].Columns[POSNR]" />
+                    <inputColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input].Columns[SALAB]"
+                      cachedDataType="numeric"
+                      cachedName="SALAB"
+                      cachedPrecision="13"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input].ExternalColumns[SALAB]"
+                      lineageId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].Columns[SALAB]" />
+                    <inputColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input].Columns[BZIRK]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="BZIRK"
+                      externalMetadataColumnId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input].ExternalColumns[BZIRK]"
+                      lineageId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].Columns[BZIRK]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input].ExternalColumns[MATNR]"
+                      dataType="wstr"
+                      length="18"
+                      name="MATNR" />
+                    <externalMetadataColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input].ExternalColumns[VBELN]"
+                      dataType="wstr"
+                      length="10"
+                      name="VBELN" />
+                    <externalMetadataColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input].ExternalColumns[POSNR]"
+                      dataType="wstr"
+                      length="6"
+                      name="POSNR" />
+                    <externalMetadataColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input].ExternalColumns[SALAB]"
+                      dataType="r8"
+                      name="SALAB" />
+                    <externalMetadataColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input].ExternalColumns[BZIRK]"
+                      dataType="wstr"
+                      length="6"
+                      name="BZIRK" />
+                    <externalMetadataColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input].ExternalColumns[LGORT]"
+                      dataType="wstr"
+                      length="4"
+                      name="LGORT" />
+                    <externalMetadataColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input].ExternalColumns[LABST]"
+                      dataType="r8"
+                      name="LABST" />
+                    <externalMetadataColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input].ExternalColumns[KLABS]"
+                      dataType="r8"
+                      name="KLABS" />
+                    <externalMetadataColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input].ExternalColumns[DB]"
+                      dataType="r8"
+                      name="DB" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\MSSA copy\MSSA dBASE.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Outputs[OLE DB Destination Error Output].Columns[MATNR]"
+                      dataType="wstr"
+                      length="18"
+                      lineageId="Package\MSSA copy\MSSA dBASE.Outputs[OLE DB Destination Error Output].Columns[MATNR]"
+                      name="MATNR" />
+                    <outputColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Outputs[OLE DB Destination Error Output].Columns[VBELN]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\MSSA copy\MSSA dBASE.Outputs[OLE DB Destination Error Output].Columns[VBELN]"
+                      name="VBELN" />
+                    <outputColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Outputs[OLE DB Destination Error Output].Columns[POSNR]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\MSSA copy\MSSA dBASE.Outputs[OLE DB Destination Error Output].Columns[POSNR]"
+                      name="POSNR" />
+                    <outputColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Outputs[OLE DB Destination Error Output].Columns[SALAB]"
+                      dataType="r8"
+                      lineageId="Package\MSSA copy\MSSA dBASE.Outputs[OLE DB Destination Error Output].Columns[SALAB]"
+                      name="SALAB" />
+                    <outputColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Outputs[OLE DB Destination Error Output].Columns[BZIRK]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\MSSA copy\MSSA dBASE.Outputs[OLE DB Destination Error Output].Columns[BZIRK]"
+                      name="BZIRK" />
+                    <outputColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\MSSA copy\MSSA dBASE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\MSSA copy\MSSA dBASE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\MSSA copy\MSSA dBASE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\MSSA copy\MSSA SQL"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="MSSA SQL"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT     MSSA.MATNR, MSSA.VBELN, MSSA.POSNR, MSSA.SALAB, MSSA.SARUE, VBKD.BZIRK
+FROM         MSSA LEFT OUTER JOIN
+                      VBKD ON MSSA.MANDT = VBKD.MANDT AND MSSA.VBELN = VBKD.VBELN
+WHERE     (MSSA.SALAB &gt; 0) AND (MSSA.WERKS = 'HPM') </property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\MSSA copy\MSSA SQL.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SAPPRD read]"
+                  connectionManagerRefId="Package.ConnectionManagers[SAPPRD read]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].Columns[MATNR]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].ExternalColumns[MATNR]"
+                      length="18"
+                      lineageId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].Columns[MATNR]"
+                      name="MATNR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].Columns[VBELN]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].ExternalColumns[VBELN]"
+                      length="10"
+                      lineageId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].Columns[VBELN]"
+                      name="VBELN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].Columns[POSNR]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].ExternalColumns[POSNR]"
+                      length="6"
+                      lineageId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].Columns[POSNR]"
+                      name="POSNR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].Columns[SALAB]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].ExternalColumns[SALAB]"
+                      lineageId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].Columns[SALAB]"
+                      name="SALAB"
+                      precision="13"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].Columns[BZIRK]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].ExternalColumns[BZIRK]"
+                      length="6"
+                      lineageId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].Columns[BZIRK]"
+                      name="BZIRK"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].ExternalColumns[MATNR]"
+                      dataType="wstr"
+                      length="18"
+                      name="MATNR" />
+                    <externalMetadataColumn
+                      refId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].ExternalColumns[VBELN]"
+                      dataType="wstr"
+                      length="10"
+                      name="VBELN" />
+                    <externalMetadataColumn
+                      refId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].ExternalColumns[POSNR]"
+                      dataType="wstr"
+                      length="6"
+                      name="POSNR" />
+                    <externalMetadataColumn
+                      refId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].ExternalColumns[SALAB]"
+                      dataType="numeric"
+                      name="SALAB"
+                      precision="13"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].ExternalColumns[SARUE]"
+                      dataType="wstr"
+                      length="1"
+                      name="SARUE" />
+                    <externalMetadataColumn
+                      refId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output].ExternalColumns[BZIRK]"
+                      dataType="wstr"
+                      length="6"
+                      name="BZIRK" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Error Output].Columns[MATNR]"
+                      dataType="wstr"
+                      length="18"
+                      lineageId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Error Output].Columns[MATNR]"
+                      name="MATNR" />
+                    <outputColumn
+                      refId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Error Output].Columns[VBELN]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Error Output].Columns[VBELN]"
+                      name="VBELN" />
+                    <outputColumn
+                      refId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Error Output].Columns[POSNR]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Error Output].Columns[POSNR]"
+                      name="POSNR" />
+                    <outputColumn
+                      refId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Error Output].Columns[SALAB]"
+                      dataType="numeric"
+                      lineageId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Error Output].Columns[SALAB]"
+                      name="SALAB"
+                      precision="13"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Error Output].Columns[BZIRK]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Error Output].Columns[BZIRK]"
+                      name="BZIRK" />
+                    <outputColumn
+                      refId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\MSSA copy.Paths[OLE DB Source Output]"
+              endId="Package\MSSA copy\MSSA dBASE.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\MSSA copy\MSSA SQL.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\VBAP copy"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Transform Data Task: undefined"
+      DTS:DTSID="{a03b90bb-ec4c-4b19-aa49-d34770c776c6}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="VBAP copy"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          version="1">
+          <components>
+            <component
+              refId="Package\VBAP copy\VBAP dBASE"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="VBAP dBASE"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">VBAP</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\VBAP copy\VBAP dBASE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[dBase III 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[dBase III 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].Columns[VBELN]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="VBELN"
+                      externalMetadataColumnId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].ExternalColumns[VBELN]"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[VBELN]" />
+                    <inputColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].Columns[POSNR]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="POSNR"
+                      externalMetadataColumnId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].ExternalColumns[POSNR]"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[POSNR]" />
+                    <inputColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].Columns[MATNR]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="MATNR"
+                      externalMetadataColumnId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].ExternalColumns[MATNR]"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[MATNR]" />
+                    <inputColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].Columns[MATKL]"
+                      cachedDataType="wstr"
+                      cachedLength="9"
+                      cachedName="MATKL"
+                      externalMetadataColumnId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].ExternalColumns[MATKL]"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[MATKL]" />
+                    <inputColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].Columns[PRODH]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="PRODH"
+                      externalMetadataColumnId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].ExternalColumns[PRODH]"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[PRODH]" />
+                    <inputColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].Columns[KWMENG]"
+                      cachedDataType="numeric"
+                      cachedName="KWMENG"
+                      cachedPrecision="15"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].ExternalColumns[KWMENG]"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[KWMENG]" />
+                    <inputColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].Columns[KZWI5]"
+                      cachedDataType="numeric"
+                      cachedName="KZWI5"
+                      cachedPrecision="13"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].ExternalColumns[KZWI5]"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[KZWI5]" />
+                    <inputColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].Columns[KUNNR]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="KUNNR"
+                      externalMetadataColumnId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].ExternalColumns[KUNNR]"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[KUNNR]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].ExternalColumns[VBELN]"
+                      dataType="wstr"
+                      length="10"
+                      name="VBELN" />
+                    <externalMetadataColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].ExternalColumns[POSNR]"
+                      dataType="wstr"
+                      length="6"
+                      name="POSNR" />
+                    <externalMetadataColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].ExternalColumns[MATNR]"
+                      dataType="wstr"
+                      length="18"
+                      name="MATNR" />
+                    <externalMetadataColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].ExternalColumns[MATKL]"
+                      dataType="wstr"
+                      length="9"
+                      name="MATKL" />
+                    <externalMetadataColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].ExternalColumns[PRODH]"
+                      dataType="wstr"
+                      length="36"
+                      name="PRODH" />
+                    <externalMetadataColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].ExternalColumns[KWMENG]"
+                      dataType="r8"
+                      name="KWMENG" />
+                    <externalMetadataColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].ExternalColumns[KZWI5]"
+                      dataType="r8"
+                      name="KZWI5" />
+                    <externalMetadataColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].ExternalColumns[DB]"
+                      dataType="r8"
+                      name="DB" />
+                    <externalMetadataColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input].ExternalColumns[KUNNR]"
+                      dataType="wstr"
+                      length="10"
+                      name="KUNNR" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\VBAP copy\VBAP dBASE.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Outputs[OLE DB Destination Error Output].Columns[VBELN]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\VBAP copy\VBAP dBASE.Outputs[OLE DB Destination Error Output].Columns[VBELN]"
+                      name="VBELN" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Outputs[OLE DB Destination Error Output].Columns[POSNR]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\VBAP copy\VBAP dBASE.Outputs[OLE DB Destination Error Output].Columns[POSNR]"
+                      name="POSNR" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Outputs[OLE DB Destination Error Output].Columns[MATNR]"
+                      dataType="wstr"
+                      length="18"
+                      lineageId="Package\VBAP copy\VBAP dBASE.Outputs[OLE DB Destination Error Output].Columns[MATNR]"
+                      name="MATNR" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Outputs[OLE DB Destination Error Output].Columns[MATKL]"
+                      dataType="wstr"
+                      length="9"
+                      lineageId="Package\VBAP copy\VBAP dBASE.Outputs[OLE DB Destination Error Output].Columns[MATKL]"
+                      name="MATKL" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Outputs[OLE DB Destination Error Output].Columns[PRODH]"
+                      dataType="wstr"
+                      length="13"
+                      lineageId="Package\VBAP copy\VBAP dBASE.Outputs[OLE DB Destination Error Output].Columns[PRODH]"
+                      name="PRODH" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Outputs[OLE DB Destination Error Output].Columns[KWMENG]"
+                      dataType="r8"
+                      lineageId="Package\VBAP copy\VBAP dBASE.Outputs[OLE DB Destination Error Output].Columns[KWMENG]"
+                      name="KWMENG" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Outputs[OLE DB Destination Error Output].Columns[KZWI5]"
+                      dataType="r8"
+                      lineageId="Package\VBAP copy\VBAP dBASE.Outputs[OLE DB Destination Error Output].Columns[KZWI5]"
+                      name="KZWI5" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\VBAP copy\VBAP dBASE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP dBASE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\VBAP copy\VBAP dBASE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\VBAP copy\VBAP SQL"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="VBAP SQL"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select VBAP.VBELN,VBAP.POSNR,VBAP.MATNR,VBAP.MATKL,VBAP.PRODH, VBAP.KWMENG, VBAP.KZWI5
+  ,VBAK.KUNNR
+from VBAP
+left join VBAK on VBAK.MANDT=VBAP.MANDT and VBAK.VBELN=VBAP.VBELN</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\VBAP copy\VBAP SQL.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SAPPRD read 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[SAPPRD read 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[VBELN]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].ExternalColumns[VBELN]"
+                      length="10"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[VBELN]"
+                      name="VBELN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[POSNR]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].ExternalColumns[POSNR]"
+                      length="6"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[POSNR]"
+                      name="POSNR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[MATNR]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].ExternalColumns[MATNR]"
+                      length="18"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[MATNR]"
+                      name="MATNR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[MATKL]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].ExternalColumns[MATKL]"
+                      length="9"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[MATKL]"
+                      name="MATKL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[PRODH]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].ExternalColumns[PRODH]"
+                      length="18"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[PRODH]"
+                      name="PRODH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[KWMENG]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].ExternalColumns[KWMENG]"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[KWMENG]"
+                      name="KWMENG"
+                      precision="15"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[KZWI5]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].ExternalColumns[KZWI5]"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[KZWI5]"
+                      name="KZWI5"
+                      precision="13"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[KUNNR]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].ExternalColumns[KUNNR]"
+                      length="10"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].Columns[KUNNR]"
+                      name="KUNNR"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].ExternalColumns[VBELN]"
+                      dataType="wstr"
+                      length="10"
+                      name="VBELN" />
+                    <externalMetadataColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].ExternalColumns[POSNR]"
+                      dataType="wstr"
+                      length="6"
+                      name="POSNR" />
+                    <externalMetadataColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].ExternalColumns[MATNR]"
+                      dataType="wstr"
+                      length="18"
+                      name="MATNR" />
+                    <externalMetadataColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].ExternalColumns[MATKL]"
+                      dataType="wstr"
+                      length="9"
+                      name="MATKL" />
+                    <externalMetadataColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].ExternalColumns[PRODH]"
+                      dataType="wstr"
+                      length="18"
+                      name="PRODH" />
+                    <externalMetadataColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].ExternalColumns[KWMENG]"
+                      dataType="numeric"
+                      name="KWMENG"
+                      precision="15"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].ExternalColumns[KZWI5]"
+                      dataType="numeric"
+                      name="KZWI5"
+                      precision="13"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output].ExternalColumns[KUNNR]"
+                      dataType="wstr"
+                      length="10"
+                      name="KUNNR" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output].Columns[VBELN]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output].Columns[VBELN]"
+                      name="VBELN" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output].Columns[POSNR]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output].Columns[POSNR]"
+                      name="POSNR" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output].Columns[MATNR]"
+                      dataType="wstr"
+                      length="18"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output].Columns[MATNR]"
+                      name="MATNR" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output].Columns[MATKL]"
+                      dataType="wstr"
+                      length="9"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output].Columns[MATKL]"
+                      name="MATKL" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output].Columns[PRODH]"
+                      dataType="wstr"
+                      length="18"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output].Columns[PRODH]"
+                      name="PRODH" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output].Columns[KWMENG]"
+                      dataType="numeric"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output].Columns[KWMENG]"
+                      name="KWMENG"
+                      precision="15"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output].Columns[KZWI5]"
+                      dataType="numeric"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output].Columns[KZWI5]"
+                      name="KZWI5"
+                      precision="13"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output].Columns[KUNNR]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output].Columns[KUNNR]"
+                      name="KUNNR" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\VBAP copy.Paths[OLE DB Source Output]"
+              endId="Package\VBAP copy\VBAP dBASE.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\VBAP copy\VBAP SQL.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{64442876-BBE1-4E8A-B09F-F1EF1359578C}"
+      DTS:From="Package\Delete tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Create tables" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{D1CBC334-5970-40B7-85EB-9BAC1E5D17D0}"
+      DTS:From="Package\Create tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\MARD copy" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{11B8FAC8-825E-46BB-B707-8510722D996F}"
+      DTS:From="Package\Create tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\MSSA copy" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{93583CED-85F7-41AF-A013-79285CE758F0}"
+      DTS:From="Package\Create tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\MSEG copy" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{36C77ABF-7FB8-4C5C-BC9A-8D847DCAC365}"
+      DTS:From="Package\Create tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\VBAP copy" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Create tables"
+          TopLeft="462,50" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Delete tables"
+          TopLeft="89,46" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\MARD copy"
+          TopLeft="114.5,286.5" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\MSEG copy"
+          TopLeft="606.5,283.5" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\MSSA copy"
+          TopLeft="378.5,281.5" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\VBAP copy"
+          TopLeft="849,290" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="229,69">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="233,0"
+              Start="0,0"
+              End="225.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="225.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="492.6,92">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-311.6,194.5"
+              Start="0,0"
+              End="-311.6,187">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.8694362017804" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,54.8694362017804"
+                    Point2="0,58.8694362017804"
+                    Point3="-4,58.8694362017804" />
+                  <mssgle:LineSegment
+                    End="-307.6,58.8694362017804" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-307.6,58.8694362017804"
+                    Point2="-311.6,58.8694362017804"
+                    Point3="-311.6,62.8694362017804" />
+                  <mssgle:LineSegment
+                    End="-311.6,187" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="519.2,92">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-72.7,189.5"
+              Start="0,0"
+              End="-72.7,182">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,80.8817541111981" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,80.8817541111981"
+                    Point2="0,84.8817541111981"
+                    Point3="-4,84.8817541111981" />
+                  <mssgle:LineSegment
+                    End="-68.7,84.8817541111981" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-68.7,84.8817541111981"
+                    Point2="-72.7,84.8817541111981"
+                    Point3="-72.7,88.8817541111981" />
+                  <mssgle:LineSegment
+                    End="-72.7,182" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="545.8,92">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="129.7,191.5"
+              Start="0,0"
+              End="129.7,184">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,81.7776037588097" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,81.7776037588097"
+                    Point2="0,85.7776037588097"
+                    Point3="4,85.7776037588097" />
+                  <mssgle:LineSegment
+                    End="125.7,85.7776037588097" />
+                  <mssgle:CubicBezierSegment
+                    Point1="125.7,85.7776037588097"
+                    Point2="129.7,85.7776037588097"
+                    Point3="129.7,89.7776037588097" />
+                  <mssgle:LineSegment
+                    End="129.7,184" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="572.4,92">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="344.1,198"
+              Start="0,0"
+              End="344.1,190.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.9287833827893" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,55.9287833827893"
+                    Point2="0,59.9287833827893"
+                    Point3="4,59.9287833827893" />
+                  <mssgle:LineSegment
+                    End="340.1,59.9287833827893" />
+                  <mssgle:CubicBezierSegment
+                    Point1="340.1,59.9287833827893"
+                    Point2="344.1,59.9287833827893"
+                    Point3="344.1,63.9287833827893" />
+                  <mssgle:LineSegment
+                    End="344.1,190.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\MARD copy">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="136,42"
+          Id="Package\MARD copy\MARD SQL"
+          TopLeft="15.5,5.5" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\MARD copy\MARD dBASE"
+          TopLeft="5.50000000000001,107.5" />
+        <EdgeLayout
+          Id="Package\MARD copy.Paths[OLE DB Source Output]"
+          TopLeft="82,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\MARD copy\MARD dBASE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\MSEG copy">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\MSEG copy\MSEG dBASE"
+          TopLeft="5.50000000000001,107.5" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\MSEG copy\MSEG SQL"
+          TopLeft="15.5,5.5" />
+        <EdgeLayout
+          Id="Package\MSEG copy.Paths[OLE DB Source Output]"
+          TopLeft="82,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\MSEG copy\MSEG dBASE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\MSEG copy\MSEG SQL">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\MSSA copy">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="135,42"
+          Id="Package\MSSA copy\MSSA SQL"
+          TopLeft="15.5,5.5" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\MSSA copy\MSSA dBASE"
+          TopLeft="5.50000000000001,107.5" />
+        <EdgeLayout
+          Id="Package\MSSA copy.Paths[OLE DB Source Output]"
+          TopLeft="81.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\VBAP copy">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="147,42"
+          Id="Package\VBAP copy\VBAP dBASE"
+          TopLeft="5.50000000000001,107.5" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\VBAP copy\VBAP SQL"
+          TopLeft="15.5,5.5" />
+        <EdgeLayout
+          Id="Package\VBAP copy.Paths[OLE DB Source Output]"
+          TopLeft="80.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
